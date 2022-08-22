@@ -10,6 +10,11 @@ const initialState = {
     filteredExpenses : [
         {name : 'Shopping', cost : 100, id: 1},
     ],
+    alert : {
+        isDisplay : false,
+        color : '',
+        text : ''
+    }
 }
 
 export const AppContext = createContext();
@@ -52,6 +57,15 @@ const AppReducer = (state, action) => {
         case "set_filtered_expense" : return {
             ...state,
             filteredExpenses : state.expenses
+        }
+
+        case "set_alert" : return {
+            ...state,
+            alert : {
+                isDisplay : action.alert.isDisplay,
+                color : action.alert.color,
+                text : action.alert.text
+            }
         }
 
         default: return state;

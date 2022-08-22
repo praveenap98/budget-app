@@ -11,6 +11,10 @@ const BudgetEdit = () => {
         dispatch({type : "toggle_budget"})
         dispatch({type : "add_budget", value : parseInt(budget)})
         setBudget('')
+        dispatch({type : 'set_alert', alert : {isDisplay : true, color : 'primary', text : 'Budget amount got added successfully...'}})
+        }
+        else {
+            dispatch({type : 'set_alert', alert : {isDisplay : true, color : 'warning', text : 'Please type the budget amount...'}})    
         }
     }
 
