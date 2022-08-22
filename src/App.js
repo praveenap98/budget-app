@@ -3,12 +3,9 @@ import Status from './components/Status';
 import Expense from './components/Expense'
 import './App.css'
 import ExpenseInput from './components/ExpenseInput';
-import { useContext, useEffect } from 'react';
-import { AppContext } from './context/AppContext';
 
 
 const App = () => {
-
     return(
         <div className='container'>
             <h1 className='my-3'>Budget Planner</h1>
