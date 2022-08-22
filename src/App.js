@@ -9,23 +9,6 @@ import { AppContext } from './context/AppContext';
 
 const App = () => {
 
-    const {expenses, dispatch} = useContext(AppContext);
-
-    useEffect(()=>{
-        const exp = JSON.parse(localStorage.getItem('budget-app-data'))
-        console.log('expense initilized : '+exp)
-
-        if(exp) {
-           dispatch({type : 'initialize_expense', expenses : exp}) 
-        }
-    }, []);
-
-    useEffect(()=>{
-        localStorage.setItem('budget-app-data', JSON.stringify(expenses))
-        console.log('expense modified : '+expenses)
-        dispatch({type : 'set_filtered_expense'})
-    }, [expenses])
-
     return(
         <div className='container'>
             <h1 className='my-3'>Budget Planner</h1>
