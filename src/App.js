@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Status from './components/Status';
+import Expense from './components/Expense'
+import './App.css'
+import ExpenseInput from './components/ExpenseInput';
+
+
+const App = () => {
+
+    return(
+        
+        <div className='container'>
+            <h1 className='my-3'>Budget Planner</h1>
+            <Status />
+            <h2 className='my-3'>Expenses</h2>
+            <Expense />
+            <h2 className='my-3'>Add Expense</h2>
+            <ExpenseInput />
+        </div>
+        
+    )
 }
 
 export default App;
